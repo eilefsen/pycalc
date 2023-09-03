@@ -1,5 +1,5 @@
 from enum import Enum
-from functools import partial, partialmethod
+from functools import partial
 
 
 class CalcOperators(Enum):

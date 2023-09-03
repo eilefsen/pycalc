@@ -1,8 +1,6 @@
 from PyQt6.QtCore import (
         Qt,
-        QRegularExpression
 )
-from PyQt6.QtGui import QRegularExpressionValidator
 from PyQt6.QtWidgets import (
         QMainWindow,
         QWidget,
@@ -10,7 +8,7 @@ from PyQt6.QtWidgets import (
         QVBoxLayout,
         QGridLayout,
         QLineEdit,
-        QSizePolicy
+        QSizePolicy,
 )
 
 
@@ -54,7 +52,9 @@ class CalcDisplay(QLineEdit):
         self.setContentsMargins(0,5,0,5)
         self.setFocus()
         self.setReadOnly(True)
-        
+
+    def keyPressEvent(self, event):
+        pass
 
     def clear(self):
         self.setText("0")
