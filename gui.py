@@ -50,11 +50,9 @@ class CalcDisplay(QLineEdit):
         self.setFixedHeight(DISPLAY_HEIGHT)
         self.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.setContentsMargins(0,5,0,5)
-        self.setFocus()
         self.setReadOnly(True)
-
-    def keyPressEvent(self, event):
-        pass
+        self.setFocus()
+        self.clear()
 
     def clear(self):
         self.setText("0")

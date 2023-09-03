@@ -1,4 +1,7 @@
 __pycache__/
+build/
+dist/
 .DS_Store
 *.ui
 *.spec
+calculator\ design.jpg

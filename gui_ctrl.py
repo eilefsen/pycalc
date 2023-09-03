@@ -15,8 +15,6 @@ class CalcController:
         self._view = view
         self._connect()
         self.current_operator = None
-        self._buildExpression("+221+10")
-        self._calculateResult()
 
     def _calculateResult(self) -> None:
         result = self._model.evaluateExpression(expression=self._view.display.text())
@@ -25,7 +23,7 @@ class CalcController:
     def _buildExpression(self, subExpression) -> None:
         if self._view.display.text() == "ERROR":
             self._view.display.clear()
-        if self._view.display.text() == "0":
+        if self._view.display.text() == "0" and subExpression != ".":
             expression = subExpression
         else:
             expression = self._view.display.text() + subExpression
@@ -41,7 +39,6 @@ class CalcController:
         self._view.buttonsLayout.buttonMap["="].clicked.connect(self._calculateResult)
         self._view.display.returnPressed.connect(self._calculateResult)
             
-
     def equals(self, operator, x, y=None):
         match operator:
             case CalcOperators.ADD:
