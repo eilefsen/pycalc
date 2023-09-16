@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QApplication
+import PyQt6.sip
 import sys
 import calc
 import gui_ctrl
